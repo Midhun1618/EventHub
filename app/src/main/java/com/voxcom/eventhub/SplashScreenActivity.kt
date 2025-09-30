@@ -17,7 +17,6 @@ class SplashScreenActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
 
-            // TODO: Replace with actual login check
             val isLoggedIn = false
 
             if (isLoggedIn) {
