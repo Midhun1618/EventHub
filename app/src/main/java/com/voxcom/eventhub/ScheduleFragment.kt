@@ -1,21 +1,40 @@
 package com.voxcom.eventhub
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class ScheduleFragment : Fragment() {
 
+    private lateinit var scheduleRecycler: RecyclerView
+    private lateinit var adapter: EventAdapter
+    private var rsvpEvents = mutableListOf<Event>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedule, container, false)
+        val view = inflater.inflate(R.layout.fragment_schedule, container, false)
+
+        scheduleRecycler = view.findViewById(R.id.scheduleRecycler)
+        scheduleRecycler.layoutManager = LinearLayoutManager(requireContext())
+
+        // TODO: Load RSVP’d events (from SharedPreferences or static list for now)
+        rsvpEvents = DummyData.getRSVPEvents() // temporary dummy
+
+        adapter = EventAdapter(rsvpEvents) { event ->
+            DummyData.toggleRSVP(event)
+            rsvpEvents = DummyData.getRSVPEvents() // Refresh list after toggling
+            adapter.updateData(rsvpEvents)
+        }
+
+        scheduleRecycler.adapter = adapter
+
+        return view
     }
 
 }

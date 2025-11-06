@@ -1,7 +1,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginBottom="12dp"
     android:elevation="6dp"
     app:cardCornerRadius="12dp">
@@ -19,23 +19,40 @@
             android:scaleType="centerCrop"
             android:src="@drawable/event_placeholder"
             android:clipToOutline="true"
-            android:outlineProvider="background"/>
+            android:outlineProvider="background" />
 
         <TextView
-            android:layout_height="wrap_content"
+            android:id="@+id/eventName"
             android:layout_width="wrap_content"
-            android:id="@+id/eventTitle"
+            android:layout_height="wrap_content"
             android:text="Event Title"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp" />
 
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
             android:id="@+id/eventDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="DateTime"
             android:layout_marginTop="4dp"
-            android:textColor="@color/darkGray"/>
+            android:textColor="@color/darkGray" />
+
+        <TextView
+            android:id="@+id/eventLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/darkGray" />
+
+        <Button
+            android:id="@+id/rsvpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RSVP"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/primaryDarkColor" />
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>
