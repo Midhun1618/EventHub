@@ -55,9 +55,9 @@
                 android:id="@+id/rsvpButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity=""
-                android:backgroundTint="@color/primaryDarkColor"
                 android:text="Join"
+                android:backgroundTint="@color/rsvp_tint_selector"
+                android:textColor="@color/rsvp_text_color"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

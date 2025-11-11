@@ -24,11 +24,11 @@ class ScheduleFragment : Fragment() {
         scheduleRecycler.layoutManager = LinearLayoutManager(requireContext())
 
 
-        rsvpEvents = DummyData.getRSVPEvents() // temporary dummy
+        rsvpEvents = DummyData.getRSVPEvents()
 
         adapter = EventAdapter(rsvpEvents) { event ->
             DummyData.toggleRSVP(event)
-            rsvpEvents = DummyData.getRSVPEvents() // Refresh list after toggling
+            rsvpEvents = DummyData.getRSVPEvents()
             adapter.updateData(rsvpEvents)
         }
 

@@ -28,6 +28,8 @@
     <color name="errorRed">#F44336</color>
     <color name="infoBlue">#2196F3</color>
     <color name="bg_light">#722196F3</color>
+    <color name="button_rsvp">#72003DCE</color>
+    <color name="button_cancel">#FAB9B9</color>
 
     <color name="nav_item_color">#3F51B5</color>
 </resources>

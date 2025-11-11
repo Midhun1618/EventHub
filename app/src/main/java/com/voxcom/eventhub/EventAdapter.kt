@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class EventAdapter(
@@ -36,10 +37,31 @@ class EventAdapter(
         holder.date.text = event.date
         holder.location.text = event.location
         holder.image.setImageResource(event.imageResId)
-        holder.rsvpButton.text = if (event.isRSVP) "Cancel" else "Join"
+        if (event.isRSVP) {
+            holder.rsvpButton.text = "Cancel"
+            holder.rsvpButton.setTextColor(ContextCompat.getColor(holder.itemView.context, R.color.textPrimary))
+            holder.rsvpButton.backgroundTintList =
+                ContextCompat.getColorStateList(holder.itemView.context, R.color.button_cancel)
+        } else {
+            holder.rsvpButton.text = "Join"
+            holder.rsvpButton.setTextColor(ContextCompat.getColor(holder.itemView.context, R.color.white))
+            holder.rsvpButton.backgroundTintList =
+                ContextCompat.getColorStateList(holder.itemView.context, R.color.button_rsvp)
+        }
 
         holder.rsvpButton.setOnClickListener {
-            onRSVPClick(event)
+            if (event.isRSVP) {
+                val builder = android.app.AlertDialog.Builder(holder.itemView.context)
+                builder.setTitle("Cancel RSVP")
+                builder.setMessage("Are you sure you want to cancel your RSVP for ${event.name} ?")
+                builder.setPositiveButton("Yes") { dialog, _ ->
+                    onRSVPClick(event)
+                    dialog.dismiss()
+                }
+                builder.show()
+            } else {
+                onRSVPClick(event)
+            }
         }
     }
     fun updateData(newEvents: MutableList<Event>) {
