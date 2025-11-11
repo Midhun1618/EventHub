@@ -12,14 +12,33 @@
         android:contentDescription="App Logo"
         android:elevation="8dp"/>
 
-    <TextView
-        android:layout_below="@id/logo"
-        android:layout_height="wrap_content"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="Discover Local Events"
-        android:textSize="22sp"
-        android:textColor="@color/nav_item_color"
-        android:textStyle="bold"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EventHub"
+            android:textColor="@color/nav_item_color"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_centerHorizontal="true"
+            android:text="Discover Local Events"
+            android:textColor="@color/darkGray"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
 </RelativeLayout>
