@@ -1,15 +1,13 @@
 package com.voxcom.eventhub
 
 object DummyData {
-
-    // Shared list of all events
     private val events = mutableListOf(
         Event(
             id = 1,
             name = "Tech Meetup 2025",
             date = "Nov 10, 2025",
             location = "Main Auditorium",
-            imageResId = R.drawable.event_placeholder,
+            imageResId = R.drawable.item_img1,
             isRSVP = false
         ),
         Event(
@@ -17,7 +15,7 @@ object DummyData {
             name = "AI Workshop",
             date = "Nov 14, 2025",
             location = "Innovation Hall",
-            imageResId = R.drawable.event_placeholder,
+            imageResId = R.drawable.item_img2,
             isRSVP = false
         ),
         Event(
@@ -25,7 +23,7 @@ object DummyData {
             name = "Hackathon 5.0",
             date = "Nov 18, 2025",
             location = "Computer Lab 301",
-            imageResId = R.drawable.event_placeholder,
+            imageResId = R.drawable.item_img3,
             isRSVP = false
         ),
         Event(
@@ -33,7 +31,7 @@ object DummyData {
             name = "Design Thinking Seminar",
             date = "Nov 22, 2025",
             location = "Hall B",
-            imageResId = R.drawable.event_placeholder,
+            imageResId = R.drawable.item_img4,
             isRSVP = false
         ),
         Event(
@@ -41,7 +39,7 @@ object DummyData {
             name = "Cloud Computing Summit",
             date = "Nov 26, 2025",
             location = "Conference Room 2",
-            imageResId = R.drawable.event_placeholder,
+            imageResId = R.drawable.item_img5,
             isRSVP = false
         )
     )

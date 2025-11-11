@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -18,6 +19,7 @@ class EventAdapter(
         val date: TextView = view.findViewById(R.id.eventDate)
         val location: TextView = view.findViewById(R.id.eventLocation)
         val rsvpButton: Button = view.findViewById(R.id.rsvpButton)
+        val image: ImageView = view.findViewById(R.id.eventImage)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
@@ -33,7 +35,8 @@ class EventAdapter(
         holder.name.text = event.name
         holder.date.text = event.date
         holder.location.text = event.location
-        holder.rsvpButton.text = if (event.isRSVP) "Cancel" else "RSVP"
+        holder.image.setImageResource(event.imageResId)
+        holder.rsvpButton.text = if (event.isRSVP) "Cancel" else "Join"
 
         holder.rsvpButton.setOnClickListener {
             onRSVPClick(event)

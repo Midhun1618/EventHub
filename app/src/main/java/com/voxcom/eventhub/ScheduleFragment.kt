@@ -23,7 +23,7 @@ class ScheduleFragment : Fragment() {
         scheduleRecycler = view.findViewById(R.id.scheduleRecycler)
         scheduleRecycler.layoutManager = LinearLayoutManager(requireContext())
 
-        // TODO: Load RSVP’d events (from SharedPreferences or static list for now)
+
         rsvpEvents = DummyData.getRSVPEvents() // temporary dummy
 
         adapter = EventAdapter(rsvpEvents) { event ->

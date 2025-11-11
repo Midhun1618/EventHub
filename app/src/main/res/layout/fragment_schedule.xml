@@ -13,7 +13,9 @@
         android:text="Your Schedule"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:paddingBottom="8dp" />
+        android:textColor="@color/white"
+        android:paddingBottom="8dp"
+        android:layout_marginTop="20dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/scheduleRecycler"
