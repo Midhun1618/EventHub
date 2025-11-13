@@ -23,7 +23,6 @@ class ScheduleFragment : Fragment() {
         scheduleRecycler = view.findViewById(R.id.scheduleRecycler)
         scheduleRecycler.layoutManager = LinearLayoutManager(requireContext())
 
-
         rsvpEvents = DummyData.getRSVPEvents()
 
         adapter = EventAdapter(rsvpEvents) { event ->

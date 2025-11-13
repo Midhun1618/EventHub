@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="primaryColor">#3F51B5</color>      <!-- Indigo (classy main color) -->
-    <color name="primaryDarkColor">#303F9F</color>  <!-- Darker indigo for status bar -->
-    <color name="primaryLight">#E8EAF6</color>      <!-- Very light indigo for backgrounds -->
-    <color name="accentColor">#FF9800</color>       <!-- Orange for highlights (buttons, icons) -->
+    <color name="primaryColor">#3F51B5</color>
+    <color name="primaryDarkColor">#303F9F</color>
+    <color name="primaryLight">#E8EAF6</color>
+    <color name="accentColor">#FF9800</color>
 
-    <!-- Neutral Tones -->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="darkGray">#757575</color>
     <color name="lightGray">#BDBDBD</color>
 
-    <!-- Backgrounds -->
-    <color name="backgroundLight">#FAFAFA</color>   <!-- Light clean background -->
-    <color name="backgroundDark">#212121</color>    <!-- Dark mode background (optional) -->
+    <color name="backgroundLight">#FAFAFA</color>
+    <color name="backgroundDark">#212121</color>
 
-    <!-- Text Colors -->
     <color name="textPrimary">#212121</color>
     <color name="textSecondary">#757575</color>
     <color name="textHint">#9E9E9E</color>
     <color name="white50">#B3FFFFFF</color>
 
-    <!-- Status / Feedback Colors -->
     <color name="successGreen">#4CAF50</color>
     <color name="warningYellow">#FFC107</color>
     <color name="errorRed">#F44336</color>
@@ -32,4 +28,5 @@
     <color name="button_cancel">#FAB9B9</color>
 
     <color name="nav_item_color">#3F51B5</color>
+
 </resources>

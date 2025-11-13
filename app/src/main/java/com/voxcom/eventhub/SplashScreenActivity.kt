@@ -6,8 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.voxcom.eventhub.utils.UserStorage
 
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,16 +15,20 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
         Handler(Looper.getMainLooper()).postDelayed({
+            val userStorage = UserStorage(this)
 
-            val isLoggedIn = false
+            val loggedInUser = userStorage.getAllUsers().find { it.isLoggedIn }
 
-            if (isLoggedIn) {
+            if (loggedInUser != null) {
+                GlobalData.userName = loggedInUser.u
+                GlobalData.eMail = loggedInUser.e
+
                 startActivity(Intent(this, MainActivity::class.java))
             } else {
                 startActivity(Intent(this, LoginActivity::class.java))
             }
 
-            finish() // Close splash so user can’t go back
-        }, 2000) // 2000ms = 2 seconds
+            finish()
+        }, 2000)
     }
 }

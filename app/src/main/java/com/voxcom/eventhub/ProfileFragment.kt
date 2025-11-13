@@ -1,5 +1,6 @@
 package com.voxcom.eventhub
 
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -32,9 +33,9 @@ class ProfileFragment : Fragment() {
         editProfileBtn = view.findViewById(R.id.editProfileBtn)
         logoutBtn = view.findViewById(R.id.logoutBtn)
 
-        // Dummy data for now (replace with real user info)
         userName.text = GlobalData.userName
         userEmail.text = GlobalData.eMail
+        val prefs = requireContext().getSharedPreferences("UserPrefs", MODE_PRIVATE)
 
         editProfileBtn.setOnClickListener {
             Toast.makeText(requireContext(), "Edit profile", Toast.LENGTH_SHORT).show()
@@ -42,6 +43,8 @@ class ProfileFragment : Fragment() {
 
         logoutBtn.setOnClickListener {
             (requireActivity() as MainActivity).logout()
+            prefs.edit().putBoolean("isLoggedIn", false).apply()
+
             Toast.makeText(requireContext(), "Logged out successfully", Toast.LENGTH_SHORT).show()
         }
 

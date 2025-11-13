@@ -14,9 +14,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="20dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="16dp"
+            android:paddingTop="35dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
             android:background="@drawable/headline_bg"
             android:elevation="8dp">
 
@@ -34,7 +34,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:gravity="center_horizontal"
+            android:gravity="left"
+            android:paddingLeft="15dp"
             android:orientation="vertical">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
@@ -43,8 +44,8 @@
 
                 <ImageView
                     android:id="@+id/profileImage"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:src="@drawable/dummy"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -55,6 +56,7 @@
                     android:id="@+id/editProfileBtn"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:elevation="5dp"
                     android:background="@drawable/round_button"
                     android:src="@drawable/baseline_edit_24"
                     app:layout_constraintBottom_toBottomOf="parent"
